@@ -7,6 +7,7 @@ import {ThreadColor} from '../ThreadColor';
   providedIn: 'root'
 })
 export class ThreadColorService {
+  selectedThreadColor!: Observable<ThreadColor>;
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -15,10 +16,17 @@ export class ThreadColorService {
   constructor(private http: HttpClient) { }
 
   /** Save selected ThreadColor from the components */
+  selectThreadColor(threadColor: ThreadColor): void {
+    this.selectedThreadColor = threadColor;
+  }
 
+  /** Get selected ThreadColor */
+  getselectedThreadColor(): Observable<ThreadColor> {
+    return this.selectedThreadColor;
+  }
 
   /** GET ThreadColors from the server */
-  getComments(): Observable<ThreadColor[]> {
+  getThreadColors(): Observable<ThreadColor[]> {
     return this.http.get<ThreadColor[]>(`http://localhost:8080/threads/allthreads`);
   }
 
