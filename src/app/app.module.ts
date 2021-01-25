@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AllColorsDisplayComponent } from './all-colors-display/all-colors-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AllColorsDisplayComponent
   ],
   imports: [
     BrowserModule,
