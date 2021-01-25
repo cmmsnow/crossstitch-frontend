@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllColorsDisplayComponent } from './all-colors-display/all-colors-display.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttperrorinterceptorService} from './services/httperrorinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,14 @@ import { AllColorsDisplayComponent } from './all-colors-display/all-colors-displ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttperrorinterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
