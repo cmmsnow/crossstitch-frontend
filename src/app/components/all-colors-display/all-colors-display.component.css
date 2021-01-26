@@ -1,0 +1,29 @@
+.all-colors{
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*bottom: 0;*/
+  width: 75%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.color-box{
+  /*position: relative;*/
+  width: 100%;
+  height: 20px;
+}
+
+.selected{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+}
+
+h4 {
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+<div class="all-colors">
+  <div *ngFor="let color of threadColors">
+    <div class="color-box" *ngIf="color" style.background-color="{{color.hexadecimal}}" (click)="onSelect(color)"></div>
+  </div>
+  <div *ngFor="let color of threadColors">
+    <div class="selected" style.background-color="{{color.hexadecimal}}">
+      <h4>Selected thread color: </h4>
+      <h4>{{color.colorName}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {ThreadColor} from '../ThreadColor';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {ThreadColor} from '../models/ThreadColor';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class ThreadColorService {
 
   /** Save selected ThreadColor from the components */
   selectThreadColor(threadColor: ThreadColor): void {
-    this.selectedThreadColor = threadColor;
+    this.selectedThreadColor = new BehaviorSubject(threadColor);
   }
 
   /** Get selected ThreadColor */

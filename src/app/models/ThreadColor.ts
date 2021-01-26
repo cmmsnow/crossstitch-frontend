@@ -1,5 +1,5 @@
 export interface ThreadColor {
-  colorID: number;
+  colorId: number;
   colorName: string;
   hexadecimal: string;
   colorFamily: string;
