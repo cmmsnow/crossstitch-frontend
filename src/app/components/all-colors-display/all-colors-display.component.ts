@@ -36,6 +36,6 @@ export class AllColorsDisplayComponent implements OnInit, AfterContentChecked {
   onSelect(threadColor: ThreadColor): void {
     this.selectedColor = threadColor;
     this.threadColorService.selectThreadColor(threadColor);
-    window.location.reload();
+    // window.location.reload();
   }
 }
