@@ -27,15 +27,14 @@ export class AllColorsDisplayComponent implements OnInit, AfterContentChecked {
 
   getSelectedColor(): void {
     if (this.threadColorService.getselectedThreadColor() != null){
-      this.threadColorService.getselectedThreadColor().subscribe((threadColor: ThreadColor) => this.selectedColor = threadColor);
+      this.selectedColor = this.threadColorService.getselectedThreadColor();
     } else {
-      this.selectedColor = this.threadColors[1];
+      this.selectedColor = this.threadColors[0];
     }
   }
 
   onSelect(threadColor: ThreadColor): void {
     this.selectedColor = threadColor;
     this.threadColorService.selectThreadColor(threadColor);
-    // window.location.reload();
   }
 }

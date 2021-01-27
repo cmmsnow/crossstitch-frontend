@@ -6,7 +6,7 @@
     </div>
   </div>
   <div *ngFor="let color of threadColors">
-    <div class="selected" style.background-color="{{color.hexadecimal}}">
+    <div *ngIf="color == selectedColor" class="selected" style.background-color="{{color.hexadecimal}}">
       <h4>Selected thread color: </h4>
       <h4>{{color.colorName}}</h4>
     </div>

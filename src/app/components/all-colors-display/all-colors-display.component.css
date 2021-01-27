@@ -11,9 +11,12 @@
 }
 
 .color-box{
-  /*position: relative;*/
   width: 100%;
   height: 20px;
+}
+
+.color-box:hover{
+  cursor: pointer;
 }
 
 .selected{
